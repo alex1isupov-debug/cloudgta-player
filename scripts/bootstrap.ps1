@@ -1,4 +1,19 @@
 $ErrorActionPreference = 'Stop'
+
+function Invoke-NativeStep {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$Command,
+    [Parameter(ValueFromRemainingArguments = $true)]
+    [string[]]$Arguments
+  )
+
+  & $Command @Arguments
+  if ($LASTEXITCODE -ne 0) {
+    throw "$Command failed with exit code $LASTEXITCODE"
+  }
+}
+
 $root = Split-Path -Parent $PSScriptRoot
 Push-Location $root
 try {
@@ -18,11 +33,11 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'npm ci failed' }
   npm run check
   if ($LASTEXITCODE -ne 0) { throw 'repository verification failed' }
-  cmake --preset test
-  cmake --build --preset test
-  ctest --preset test
-  cmake --preset production
-  cmake --build --preset production
+  Invoke-NativeStep -Command cmake -Arguments @('--preset', 'test')
+  Invoke-NativeStep -Command cmake -Arguments @('--build', '--preset', 'test', '--config', 'Debug')
+  Invoke-NativeStep -Command ctest -Arguments @('--preset', 'test', '-C', 'Debug')
+  Invoke-NativeStep -Command cmake -Arguments @('--preset', 'production')
+  Invoke-NativeStep -Command cmake -Arguments @('--build', '--preset', 'production', '--config', 'Release')
 } finally {
   Pop-Location
 }
