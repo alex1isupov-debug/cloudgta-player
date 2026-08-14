@@ -6,9 +6,11 @@
       "name": "production",
       "generator": "Visual Studio 17 2022",
       "architecture": "x64",
+      "toolset": "version=14.44",
       "binaryDir": "${sourceDir}/build/production",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_SYSTEM_VERSION": "10.0.26100.0",
         "CLOUDGTA_TESTING": "OFF"
       }
     },

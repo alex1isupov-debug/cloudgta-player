@@ -7,6 +7,7 @@
   },
   "scripts": {
     "format:check": "node scripts/check-format.mjs",
+    "toolchain": "node scripts/verify-toolchain.mjs",
     "lint": "node scripts/lint.mjs",
     "test": "node --test tests/unit/*.test.mjs",
     "schema": "node scripts/validate-generated.mjs",
@@ -16,4 +17,3 @@
     "check": "npm run format:check && npm run lint && npm test && npm run schema && npm run boundaries && npm run docs && npm run build:metadata"
   }
 }
-
