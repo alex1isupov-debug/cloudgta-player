@@ -1,7 +1,1 @@
-* @cloudgta/player-maintainers
-/lib/ @cloudgta/upstream-maintainers
-/cloudgta/ @cloudgta/player-maintainers
-/generated/ @cloudgta/contracts
-/packaging/ @cloudgta/release
-/.github/ @cloudgta/release
-
+* @alex1isupov-debug

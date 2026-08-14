@@ -18,7 +18,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/cloudgta-docs
-          ref: d6947364ebb7f6d150c4f70c88486949e96f51fb
+          ref: dc108d6b663c4acce413f195415fda42d25abf5e
           path: docs
+          ssh-key: ${{ secrets.DOCS_DEPLOY_KEY }}
       - shell: pwsh
         run: ./scripts/bootstrap.ps1
