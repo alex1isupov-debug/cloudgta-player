@@ -6,6 +6,8 @@ on:
 jobs:
   quality-and-native-build:
     runs-on: windows-2025
+    env:
+      CLOUDGTA_PLATFORM_REVISION: 26c4359a665d790ded148f9adab87dafaabf7490
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
