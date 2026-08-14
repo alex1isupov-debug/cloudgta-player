@@ -5,7 +5,7 @@ export async function filesUnder(root, accept = () => true) {
   const output = [];
   async function visit(directory) {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
-      if (['.git', 'build', 'artifacts'].includes(entry.name)) continue;
+      if (['.git', '.toolchains', 'node_modules', 'build', 'artifacts'].includes(entry.name)) continue;
       const path = join(directory, entry.name);
       if (entry.isDirectory()) await visit(path);
       else if (accept(path)) output.push(path);
@@ -14,4 +14,3 @@ export async function filesUnder(root, accept = () => true) {
   await visit(root);
   return output;
 }
-
