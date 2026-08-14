@@ -1,0 +1,19 @@
+{
+  "name": "cloudgta-player-repository-tools",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=24.6.0 <25"
+  },
+  "scripts": {
+    "format:check": "node scripts/check-format.mjs",
+    "lint": "node scripts/lint.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "schema": "node scripts/validate-generated.mjs",
+    "boundaries": "node scripts/check-boundaries.mjs",
+    "docs": "node scripts/check-doc-links.mjs",
+    "build:metadata": "node scripts/build-metadata.mjs",
+    "check": "npm run format:check && npm run lint && npm test && npm run schema && npm run boundaries && npm run docs && npm run build:metadata"
+  }
+}
+

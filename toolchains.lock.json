@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "node": "24.6.0",
+  "cmake": "3.31.8",
+  "qt": "6.8.3",
+  "compiler": "MSVC 19.44 (Visual Studio Build Tools 2022 17.14)",
+  "wix": "5.0.2",
+  "windowsSdk": "10.0.26100.0",
+  "target": "windows-x64"
+}
+

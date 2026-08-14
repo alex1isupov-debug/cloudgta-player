@@ -1,0 +1,30 @@
+name: player-ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  quality-and-native-build:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.6.0
+          cache: npm
+      - uses: ssrobins/install-cmake@v1
+        with:
+          version: 3.31.8
+      - run: npm ci --ignore-scripts
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm test
+      - run: npm run schema
+      - run: npm run boundaries
+      - run: npm run docs
+      - run: npm run build:metadata
+      - run: cmake --preset test
+      - run: cmake --build --preset test
+      - run: ctest --preset test
+      - run: cmake --preset production
+      - run: cmake --build --preset production

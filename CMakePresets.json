@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "cmakeMinimumRequired": { "major": 3, "minor": 31, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "production",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/production",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CLOUDGTA_TESTING": "OFF"
+      }
+    },
+    {
+      "name": "test",
+      "inherits": "production",
+      "binaryDir": "${sourceDir}/build/test",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CLOUDGTA_TESTING": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "production", "configurePreset": "production" },
+    { "name": "test", "configurePreset": "test" }
+  ],
+  "testPresets": [
+    { "name": "test", "configurePreset": "test", "output": { "outputOnFailure": true } }
+  ]
+}
