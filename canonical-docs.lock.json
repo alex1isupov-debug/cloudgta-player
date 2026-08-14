@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "cloudgta-docs",
-  "revision": "dc108d6b663c4acce413f195415fda42d25abf5e",
+  "revision": "6464a9b92dfae404458e259046fe72b60b4d72b2",
   "links": {
     "../docs/02-architecture/PROJECT-STRUCTURE.md": "1646b271445a3712cd305f8d9db8d6702ae2cae99cd00a763f17872d06a8b158"
   }
