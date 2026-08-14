@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/cloudgta-docs
-          ref: dc108d6b663c4acce413f195415fda42d25abf5e
+          ref: 6464a9b92dfae404458e259046fe72b60b4d72b2
           path: docs
           ssh-key: ${{ secrets.DOCS_DEPLOY_KEY }}
       - shell: pwsh
