@@ -13,12 +13,17 @@ it never selects a revision implicitly.
 
 ## Bootstrap
 
-Install the exact versions declared by `.tool-versions` and
-`toolchains.lock.json` (CI provisions them on a clean Windows runner), then:
+From a clean Windows checkout, run:
 
 ```powershell
 ./scripts/bootstrap.ps1
 ```
+
+The command installs the exact Node, CMake, Qt, WiX, .NET SDK, MSVC and Windows SDK versions
+declared by `toolchains.lock.json`, validates hashes or publisher signatures, then
+runs repository checks plus Debug tests and the Release native build. The first
+run requires network access and may request elevation for the Microsoft Build Tools installer;
+later runs reuse the verified toolchain.
 
 The production target contains the application core and narrow Remote Play adapter
 interface only. Fake adapters are compiled exclusively into the test target and are

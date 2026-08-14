@@ -17,6 +17,7 @@ function Invoke-NativeStep {
 $root = Split-Path -Parent $PSScriptRoot
 Push-Location $root
 try {
+  & (Join-Path $PSScriptRoot 'install-toolchain.ps1')
   $expectedUpstream = 'https://github.com/streetpea/chiaki-ng.git'
   $upstream = git remote get-url upstream 2>$null
   if ($LASTEXITCODE -ne 0) {
@@ -25,8 +26,8 @@ try {
   } elseif ($upstream -ne $expectedUpstream) {
     throw "Unexpected upstream remote: $upstream"
   }
-  if (-not (Get-Command node -ErrorAction SilentlyContinue)) { throw 'Node.js is required; install the version from .tool-versions.' }
-  if (-not (Get-Command npm -ErrorAction SilentlyContinue)) { throw 'npm is required.' }
+  if (-not (Get-Command node -ErrorAction SilentlyContinue)) { throw 'Bootstrap did not install Node.js.' }
+  if (-not (Get-Command npm -ErrorAction SilentlyContinue)) { throw 'Bootstrap did not install npm.' }
   node scripts/verify-toolchain.mjs
   if ($LASTEXITCODE -ne 0) { throw 'toolchain verification failed' }
   npm ci --ignore-scripts

@@ -4,8 +4,77 @@
   "cmake": "3.31.8",
   "qt": "6.8.3",
   "compiler": "MSVC 19.44 (Visual Studio Build Tools 2022 17.14)",
+  "msvcTools": "14.44",
   "wix": "5.0.2",
+  "dotnet": "8.0.424",
   "windowsSdk": "10.0.26100.0",
-  "target": "windows-x64"
+  "target": "windows-x64",
+  "bootstrap": {
+    "nodeWindowsX64": {
+      "url": "https://nodejs.org/download/release/v24.6.0/node-v24.6.0-win-x64.zip",
+      "sha256": "3a6d32fe5883698e6c59ca5a6554b41c1b2a95db4f7ab7c4edd272f4391780da"
+    },
+    "cmakeWindowsX64": {
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-windows-x86_64.zip",
+      "sha256": "81aa9964dbabd71fe02e7ec50472fd3ad56138c49944515ece9001efbff8d719"
+    },
+    "qtWindowsX64": {
+      "repositoryPath": "online/qtsdkrepository/windows_x86/desktop/qt6_683/qt6_683/qt.qt6.683.win64_msvc2022_64",
+      "mirrors": [
+        "https://mirror.sjtu.edu.cn/qt",
+        "https://download.qt.io"
+      ],
+      "archives": [
+        {
+          "name": "6.8.3-0-202503201308qtbase-Windows-Windows_11_23H2-MSVC2022-Windows-Windows_11_23H2-X86_64.7z",
+          "sha256": "41688269fac0565db956c66d9eecae777d16197e0c02cd81b88640c1f5d73d3f"
+        },
+        {
+          "name": "6.8.3-0-202503201308qtsvg-Windows-Windows_11_23H2-MSVC2022-Windows-Windows_11_23H2-X86_64.7z",
+          "sha256": "48d1d798894cbf8696a0010fcfdeafea652b35159c56ea2060ee85ce3d0048f7"
+        },
+        {
+          "name": "6.8.3-0-202503201308qtdeclarative-Windows-Windows_11_23H2-MSVC2022-Windows-Windows_11_23H2-X86_64.7z",
+          "sha256": "c2f9f481bf6e8fb004530f20b820fbc77d4ee6dcca24d1ea1d1863d99c5dabf1"
+        },
+        {
+          "name": "6.8.3-0-202503201308qttools-Windows-Windows_11_23H2-MSVC2022-Windows-Windows_11_23H2-X86_64.7z",
+          "sha256": "76ac7b8c86ca72b6608f1d41ee848aeab19663536990b4968ce52db8ec980bc3"
+        },
+        {
+          "name": "6.8.3-0-202503201308qttranslations-Windows-Windows_11_23H2-MSVC2022-Windows-Windows_11_23H2-X86_64.7z",
+          "sha256": "c78fef2eff30b880e1aa9b049eff8a283431bc2d7e03132143279b5480d95418"
+        },
+        {
+          "name": "6.8.3-0-202503201308d3dcompiler_47-x64.7z",
+          "sha256": "f886f3255600d46b3e651ab5cb8084b42df5e59f78993ad43d8b0cb3b70552c3"
+        },
+        {
+          "name": "6.8.3-0-202503201308opengl32sw-64-mesa_11_2_2-signed_sha256.7z",
+          "sha256": "b3e65312ca58e3ea3853eb5af7893a9fb26887b05bc6a1ccc706f88f9f971aeb"
+        }
+      ]
+    },
+    "wixWindowsX64": {
+      "url": "https://github.com/wixtoolset/wix/releases/download/v5.0.2/artifacts.zip",
+      "sha256": "2b28db604c69e10d48297357dcd70adf5cfadf548be73186ffd38ff657563ecd",
+      "package": "wix.5.0.2.nupkg"
+    },
+    "dotnetWindowsX64": {
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.424/dotnet-sdk-8.0.424-win-x64.zip",
+      "sha512": "1787ab90635c2950672ed7c6507b000e1b212ea7d9a22fcef37061344d37c64d4c4eda12b8742601eff5b45c8736485b31c55613892f240c300190e4e88a58b0"
+    },
+    "visualStudioBuildTools": {
+      "url": "https://aka.ms/vs/17/release/vs_buildtools.exe",
+      "sha256": "15df9d3b4c2b2eaf44704d5e938c895341b9cd8ba40a9a18610f8d18cbe01b53",
+      "signer": "Microsoft Corporation",
+      "installPath": "C:\\BuildTools\\VS2022",
+      "components": [
+        "Microsoft.VisualStudio.Workload.VCTools",
+        "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+        "Microsoft.VisualStudio.Component.VC.14.44.17.14.x86.x64",
+        "Microsoft.VisualStudio.Component.Windows11SDK.26100"
+      ]
+    }
+  }
 }
-
