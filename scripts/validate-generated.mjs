@@ -5,7 +5,7 @@ const snapshot = JSON.parse(await readFile(snapshotPath, 'utf8'));
 const upstream = JSON.parse(await readFile(new URL('../upstream.lock.json', import.meta.url), 'utf8'));
 if (snapshot.schemaVersion !== 1 || snapshot.sourceRepository !== 'cloudgta-platform') throw new Error('invalid generated contract snapshot');
 if (!/^[a-f0-9]{40}$/.test(snapshot.sourceRevision)) throw new Error('source revision must be an exact platform commit');
-if (snapshot.sourceDigestSha256 !== '42610f732cd439670bc20759b033be88e330310258fd63eea5b7db1de7dadfeb') {
+if (snapshot.sourceDigestSha256 !== 'd729f638086588550b5e9b4110654718e1a0f7d741532334512f5c29cba5d8aa') {
   throw new Error('generated snapshot digest does not match the locked platform evidence schema');
 }
 if (snapshot.contracts.length !== 1 || snapshot.contracts[0] !== 'contracts/schemas/evidence-v1.schema.json') {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "cloudgta-platform",
-  "sourceRevision": "26c4359a665d790ded148f9adab87dafaabf7490",
-  "sourceDigestSha256": "42610f732cd439670bc20759b033be88e330310258fd63eea5b7db1de7dadfeb",
+  "sourceRevision": "1ae084d6fe3c9e904b9128965ba645fa96d5565c",
+  "sourceDigestSha256": "d729f638086588550b5e9b4110654718e1a0f7d741532334512f5c29cba5d8aa",
   "contracts": ["contracts/schemas/evidence-v1.schema.json"]
 }

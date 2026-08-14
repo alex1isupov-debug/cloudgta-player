@@ -23,6 +23,6 @@ await writeFile(resolve(output, 'compatibility-manifest.json'), `${JSON.stringif
   schemaVersion: 1,
   revisions: { platform: platformRevision, player: playerRevision },
   artifacts: { playerManifestSha256: createHash('sha256').update(artifactManifestJson).digest('hex') },
-  contractSnapshot: { platformRevision: '26c4359a665d790ded148f9adab87dafaabf7490', digestSha256: '42610f732cd439670bc20759b033be88e330310258fd63eea5b7db1de7dadfeb' },
+  contractSnapshot: { platformRevision: '1ae084d6fe3c9e904b9128965ba645fa96d5565c', digestSha256: 'd729f638086588550b5e9b4110654718e1a0f7d741532334512f5c29cba5d8aa' },
 }, null, 2)}\n`);
 console.log('build: production metadata assembled without test adapters');
